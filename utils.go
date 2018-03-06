@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 )
 
-func AtomicWrite(filename string, data []byte, perm os.FileMode) error {
+func AtomicWriteFile(filename string, data []byte, perm os.FileMode) error {
 	tname, err := func() (string, error){
 		f, err := ioutil.TempFile(filepath.Dir(filename), "._")
 		if err != nil {
