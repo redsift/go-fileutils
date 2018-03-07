@@ -1,4 +1,4 @@
-package go_fileutils
+package fileutils
 
 import (
 	"os"
@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 )
 
-func AtomicWriteFile(filename string, data []byte, perm os.FileMode) error {
+func AtomicWrite(filename string, data []byte, perm os.FileMode) error {
 	tname, err := func() (string, error){
 		f, err := ioutil.TempFile(filepath.Dir(filename), "._")
 		if err != nil {
